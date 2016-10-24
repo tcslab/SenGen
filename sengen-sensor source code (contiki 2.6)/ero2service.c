@@ -102,6 +102,7 @@ void sengen_handler(void* request, void* response, uint8_t *buffer, uint16_t pre
 				//flag=1;
 				//sprintf(message,"sengen sengen= OPEN");
 				printf("message is %s\n",message);
+				printf("the actuator1 value is %d\n", actuator1_state);
 				memcpy(buffer, "SG=ON", 6);
 				leds_on(LEDS_GREEN);
 				leds_off(LEDS_RED);

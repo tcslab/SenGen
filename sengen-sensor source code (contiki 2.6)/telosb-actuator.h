@@ -49,7 +49,8 @@
 #define P26_1() (P2OUT |= BV(6))
 #define P26_0() (P2OUT &= ~BV(6))
 
-
+extern int actuator1_state = 0;
+extern int actuator2_state = 0;
 
 
 void SetActuator(int stype); /* function prototype*/
@@ -69,10 +70,11 @@ printf(" The actuator you set: ***%d*** does not belong to the system! Please ch
 void ActuatorON(int stype){
 if (stype == 1){
 P23_1();
-printf("sdfsfsdfsdf%d \n", stype);
+actuator1_state = 1;
 }
 else if (stype == 2)
 P26_1();
+extern int actuator2_state = 1;
 }
 
 void ActuatorOFF(int stype){
