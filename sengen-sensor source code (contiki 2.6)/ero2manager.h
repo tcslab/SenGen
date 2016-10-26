@@ -46,6 +46,7 @@
 #define REGISTRATION_FAILED "101"
 #define REREGISTRATION_REQUIRED "102"
 
+int actuator1_state; //defining the actuator1 state status
 struct parent{
 	uip_ipaddr_t ipaddr;
 	char* service_pointer;
