@@ -98,17 +98,19 @@ void sengen_handler(void* request, void* response, uint8_t *buffer, uint16_t pre
 
 		  if (strncmp(status, "on", len)==0){	
 				ActuatorON(1);
+				actuator1_state=1;
 				//ActuatorON(2);
 				//flag=1;
 				//sprintf(message,"sengen sengen= OPEN");
 				printf("message is %s\n",message);
-				printf("the actuator1 value is %d\n", actuator1_state);
+				//printf("the actuator1 value is %d\n", actuator1_state);
 				memcpy(buffer, "SG=ON", 6);
 				leds_on(LEDS_GREEN);
 				leds_off(LEDS_RED);
 				//process_start(&timer_process,NULL);
 			}else if (strncmp(status, "off", len)==0){
 				ActuatorOFF(1);
+				actuator1_state=0;
 				ActuatorOFF(2);		
 				//flag=0;
 				//sprintf(message,"sengen lock= CLOSED");

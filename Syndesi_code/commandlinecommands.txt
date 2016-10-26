@@ -1,6 +1,0 @@
-#build project from command line:
-javac -d bin -sourcepath src -cp lib/californium-0.12.0-SNAPSHOT.jar:lib/comm.jar:lib/json-simple-1.1.1.jar:lib/mysql-connector-java-3.0.17-ga-bin.jar:lib/org.restlet.jar:lib/RXTXcomm.jar src/ero2/core/ErO2Server.java
-
-
-#run project from command line:
-java -Dfile.encoding=UTF-8 -classpath /home/ali/workspace/syndesi_ali/bin:lib/californium-0.12.0-SNAPSHOT.jar:lib/comm.jar:lib/json-simple-1.1.1.jar:lib/mysql-connector-java-3.0.17-ga-bin.jar:lib/org.restlet.jar:lib/RXTXcomm.jar ero2.core.ErO2Server > telosblog 2>&1
