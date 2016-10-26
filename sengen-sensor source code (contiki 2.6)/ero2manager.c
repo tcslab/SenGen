@@ -50,6 +50,7 @@ PROCESS_THREAD(ero2_process, ev, data)
 	PROCESS_BEGIN();
 	int rand_int, name_int, temp;
 	int temp2 = 0;
+	actuator1_state = 0;
 	//PRINTF("ErO2 Process starts!\n");
 	switch(service_pointer[3]){       //HACK for sengen to initialize random generator based on sensor name
 		case 'A':
@@ -143,8 +144,8 @@ PROCESS_THREAD(ero2_process, ev, data)
 				float RealHumidValue = (FloatTempValue-25)*(0.01+0.00008*hum)+FloatHumidValueLin;
 				int HumidValue = RealHumidValue*100;
 
-				//sprintf(payload,"%s|%d|%d|%f",service_pointer, LightValue, 22);
-				sprintf(payload,"%s|%d|%d|%d",service_pointer, LightValue, TempValue, HumidValue);
+				//prepare the packet to send
+				sprintf(payload,"%s|%d|%d|%d|%d|",service_pointer, LightValue, TempValue, HumidValue,actuator1_state);
 				PRINTF("Payload %s\n",payload);
 				
 				invoke_service(&remote_service,payload);
