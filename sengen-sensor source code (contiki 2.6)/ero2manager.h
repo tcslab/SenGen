@@ -47,7 +47,10 @@
 #define REREGISTRATION_REQUIRED "102"
 
 int actuator1_state; //defining the actuator1 state status
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 struct parent{
 	uip_ipaddr_t ipaddr;
 	char* service_pointer;
